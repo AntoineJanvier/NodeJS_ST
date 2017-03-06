@@ -10,6 +10,7 @@ let Sword = function (name, hei, wid, wei, price, legendary, year) {
     Weapon.apply(this, arguments);
     this.legendary = legendary;
     this.year = year;
+    this.bonus = this.bonus_();
 };
 
 Sword.prototype = new Weapon();
@@ -26,5 +27,13 @@ Sword.prototype.damage_ = function () {
     this.damage = a;
     return a;
 };
+Sword.prototype.bonus_ = function () {
+    return (this.weight / this.year + ((this.weight / this.year * 30) / 100));
+};
+Sword.prototype.toString = function () {
+    return 'Sword=['+this.name+', '+this.height+', '+this.width+', '+this.weight+
+            ', '+this.price+', '+this.legendary+', '+this.year+']';
+};
+
 
 module.exports = Sword;
