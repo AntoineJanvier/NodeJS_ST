@@ -1,0 +1,19 @@
+{
+  "name": "semaine_thematique",
+  "version": "1.0.0",
+  "description": "### Cours 1 (lun. 6 - 9h45-13h): Initialiser, commencer un projet node",
+  "main": "a.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntoineJanvier/NodeJS_ST.git"
+  },
+  "author": "ESGI",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/AntoineJanvier/NodeJS_ST/issues"
+  },
+  "homepage": "https://github.com/AntoineJanvier/NodeJS_ST#readme"
+}
