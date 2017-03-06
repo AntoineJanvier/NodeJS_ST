@@ -15,3 +15,11 @@ Array :
 Installer un module node :
     npm install <package> -s OU npm install <package> --save
     Edite le fichier package.json
+
+// OBJETS :
+Déclaration entre accolade dans une variable
+Semblable à clé-valeur
+Intégration de fonction
+this & new comme mot clé, comme en Java
+
+Fonction membre : Object.prototype.name_of_function = function() {};

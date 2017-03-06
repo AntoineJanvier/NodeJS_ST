@@ -10,4 +10,4 @@ let s1 = scanf("%s");
 console.log("S2 :");
 let s2 = scanf("%s");
 
-console.log(s1.length < s2.length ? "s1 < s2" : "s1 > s2");
+console.log(s1.length * 2 == s2.length ? "OK" : "NOK");
