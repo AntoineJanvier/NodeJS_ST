@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AntoineJanvier/NodeJS_ST/issues"
   },
-  "homepage": "https://github.com/AntoineJanvier/NodeJS_ST#readme"
+  "homepage": "https://github.com/AntoineJanvier/NodeJS_ST#readme",
+  "dependencies": {
+    "scanf": "^0.7.3"
+  }
 }

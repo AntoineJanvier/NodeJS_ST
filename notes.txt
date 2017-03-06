@@ -11,3 +11,7 @@ Array :
     push (Ajoute un élément à la fin)
     pop (Enlève le dernier élément
     splice (Supprime des éléments)
+
+Installer un module node :
+    npm install <package> -s OU npm install <package> --save
+    Edite le fichier package.json
