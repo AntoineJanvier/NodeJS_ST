@@ -1,6 +1,7 @@
 /**
- * Created by antoine on 06/03/17.
- */
+* Created by Antoine Janvier
+* on 06/03/17.
+*/
 'use strict';
 
 module.exports = function (arr) {

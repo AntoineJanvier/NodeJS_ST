@@ -1,3 +1,7 @@
+/**
+ * Created by Antoine Janvier
+ * on 06/03/17.
+ */
 "use strict"; // Permet les dernières nouveautés de NodeJS
 
 const scanf = require('scanf');

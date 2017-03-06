@@ -1,7 +1,7 @@
 /**
-    * Created by Antoine Janvier
-    * on 06/03/17.
-    */
+* Created by Antoine Janvier
+* on 06/03/17.
+*/
 "use strict";
 const scanf = require('scanf');
 const arr = require('./arr');
