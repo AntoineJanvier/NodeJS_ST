@@ -4,8 +4,9 @@
 */
 'use strict';
 let Hippopotamus = require('./Hippopotamus');
-let Point = require('./Point');
-let Circle = require('./Circle');
+let Geometry = require('./geometry');
+let Point = Geometry.Point;
+let Circle = Geometry.Circle;
 
 let h = new Hippopotamus('Toto', 500, 15);
 let h2 = new Hippopotamus('Titi', 520, 17);

@@ -6,22 +6,17 @@
 let Point = require('./Point');
 
 let Circle = function (point, radius) {
-    this.point = point;
+    this.center = point || new Point();
     this.radius = radius;
 };
 Circle.prototype.area = function () {
     return (Math.PI * this.radius * this.radius);
 };
 Circle.prototype.containsPoint = function (p) {
-    let a = this.point.x - p.getX();
-    a *= a;
-    let b = this.point.y - p.getY();
-    b *= b;
-    let d = Math.sqrt(a + b);
-    return d < this.radius;
+    return this.center.distanceTo(p) < this.radius;
 };
 Circle.prototype.toString = function () {
-    return "Circle : " + this.point.x + ', ' + this.point.y + ', rad: ' + this.radius;
+    return "Circle : " + this.center.x + ', ' + this.center.y + ', rad: ' + this.radius;
 };
 
 module.exports = Circle;
