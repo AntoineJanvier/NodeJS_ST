@@ -12,4 +12,10 @@ let SuperCar = function () {
 SuperCar.prototype = new Car();
 SuperCar.prototype.constructor = SuperCar;
 
+SuperCar.prototype.gasPedal = function () { this.speed += 100; };
+SuperCar.prototype.toString = function () {
+    let r = Car.prototype.toString.apply(this, arguments);
+    return r + ' qui va vite !';
+};
+
 module.exports = SuperCar;

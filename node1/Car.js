@@ -13,5 +13,8 @@ let Car = function (model, brand, year) {
 Car.prototype.gasPedal = function () {
     this.speed += 10;
 };
+Car.prototype.toString = function () {
+    return 'Je suis une voiture';
+};
 
 module.exports = Car;

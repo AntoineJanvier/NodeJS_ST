@@ -5,6 +5,7 @@
 'use strict';
 
 const Car = require('./Car');
+const SuperCar = require('./SuperCar');
 
 let c = new Car('C1', 'Citroen', '2012');
 console.log(c);
@@ -12,9 +13,7 @@ c.gasPedal();
 c.gasPedal();
 c.gasPedal();
 console.log(c);
-Car.prototype.stop = function () {
-    this.speed = 0;
-};
+Car.prototype.stop = function () { this.speed = 0; };
 c.stop();
 console.log(c);
 
@@ -22,13 +21,18 @@ console.log(c);
 //     let idx = Math.random() * this.length;
 //     return this.charAt(idx);
 // };
+// let oldCharAt = String.prototype.charAt;
+// String.prototype.charAt = function (i) {
+//     let idx = Math.random() * this.length;
+//     return oldCharAt.call(this, idx);
+// };
+//
+// console.log("azertyuiop".charAt(3));
+// console.log("azertyuiop");
+// console.log("azertyuiop");
 
-let oldCharAt = String.prototype.charAt;
-String.prototype.charAt = function (i) {
-    let idx = Math.random() * this.length;
-    return oldCharAt.call(this, idx);
-};
-
-console.log("azertyuiop".charAt(3));
-console.log("azertyuiop");
-console.log("azertyuiop");
+let sc = new SuperCar('C2', 'Citroen');
+sc.gasPedal();
+console.log(sc);
+console.log(''+c);
+console.log(''+sc);
