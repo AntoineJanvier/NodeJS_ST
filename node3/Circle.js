@@ -13,8 +13,15 @@ Circle.prototype.area = function () {
     return (Math.PI * this.radius * this.radius);
 };
 Circle.prototype.containsPoint = function (p) {
-    let d = Math.sqrt(Math.pow((this.x - p.getX()), 2) + Math.pow((this.x - p.getX()), 2));
+    let a = this.point.x - p.getX();
+    a *= a;
+    let b = this.point.y - p.getY();
+    b *= b;
+    let d = Math.sqrt(a + b);
     return d < this.radius;
+};
+Circle.prototype.toString = function () {
+    return "Circle : " + this.point.x + ', ' + this.point.y + ', rad: ' + this.radius;
 };
 
 module.exports = Circle;
