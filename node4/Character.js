@@ -20,11 +20,11 @@ Character.prototype.protect = function (degats) {
 };
 Character.prototype.attack = function (c) {
     if(Math.random() * 100 < this.hitChance)
-        c.health -= Math.round((this.weapon.damage + ((this.weapon.damage * 13) / 100)));
+        c.protect(Math.round((this.weapon.damage + ((this.weapon.damage * 13) / 100))));
 };
 
 Character.prototype.toString = function () {
-    return 'Character=[\n\tname="'+this.name+'", health='+this.health+
+    return '\nCharacter=[\n\tname="'+this.name+'", health='+this.health+
         'pv, hitChance='+this.hitChance+'%, '+this.weapon.toString()+'\n]';
 };
 

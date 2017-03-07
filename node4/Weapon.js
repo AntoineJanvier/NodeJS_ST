@@ -10,7 +10,7 @@ let Weapon = function (name, hei, wid, wei, price) {
     this.width = wid;
     this.weight = wei; // En grammes
     this.price = price;
-    this.duration = Math.random() * 100;
+    this.duration = Math.random() * 1000;
     this.damage = Math.random() * 1000;
     this.bonus = Math.random() * 1000;
 };
