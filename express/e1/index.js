@@ -11,10 +11,26 @@ let app = express();
 app.use(function (req, res, next) {
     console.log("work in progress...");
     next(); // Nécessaire pour poursuivre vers le routing
+    //res.end(); // Ferme complètement la connexion
 });
 app.use(cookieParser());
 app.get("/cookies", function (req, res) {
     res.json(req.cookies);
+});
+app.get("/cookies/create", function (req, res) {
+    let k = req.query.key;
+    let v = req.query.value;
+    if(k && v) {
+        res.cookie(k, v, {maxAge: 90000});
+        res.json({
+            "success": true
+        })
+    } else {
+        res.json({
+            "success": false
+        })
+    }
+
 });
 
 // GET : Racine
