@@ -16,7 +16,7 @@ let Weapon = function (name, hei, wid, wei, price) {
 };
 
 Weapon.prototype.duration_ = function () {
-    return Math.random() * 100;
+    return ;
 };
 Weapon.prototype.damage_ = function () {
     return Math.random() * 1000;

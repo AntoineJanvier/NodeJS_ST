@@ -1,11 +1,12 @@
 /**
- * Created by antoine on 06/03/17.
- */
+* Created by Antoine Janvier
+* on 06/03/17.
+*/
 'use strict';
 
 let Weapon = require('./Weapon');
 
-let Gun = function(bullets) {
+let Gun = function(name, hei, wid, wei, price, bullets) {
     Weapon.apply(this,arguments);
     this.bullets=bullets;
 };
@@ -21,6 +22,11 @@ Gun.prototype.damage = function(){
 };
 Gun.prototype.duration = function() {
     return ((this.price/this.weight)*this.damage());
+};
+Gun.prototype.toString = function () {
+    return '\n\tGun=[\n\t\tname"'+this.name+'", height='+this.height+
+        'm, width='+this.width+'m, weight='+(this.weight > 1000 ? this.weight / 1000 + 'kg' : this.height + 'g')+
+        ', price='+this.price+'$, bullets='+this.bullets+'\n\t]';
 };
 
 module.exports = Gun;
