@@ -10,19 +10,9 @@ let Weapon = function (name, hei, wid, wei, price) {
     this.width = wid;
     this.weight = wei; // En grammes
     this.price = price;
-    this.duration = this.duration_();
-    this.damage = this.damage_();
-    this.bonus = this.bonus_();
-};
-
-Weapon.prototype.duration_ = function () {
-    return ;
-};
-Weapon.prototype.damage_ = function () {
-    return Math.random() * 1000;
-};
-Weapon.prototype.bonus_ = function () {
-    return Math.random() * 1000;
+    this.duration = Math.random() * 100;
+    this.damage = Math.random() * 1000;
+    this.bonus = Math.random() * 1000;
 };
 
 module.exports = Weapon;
