@@ -33,7 +33,7 @@ Sword.prototype.bonus_ = function () {
 Sword.prototype.toString = function () {
     return '\n\tSword=[\n\t\tname="' + this.name + '", height=' + this.height +
         'm, width=' + this.width + 'm, height=' + (this.weight > 1000 ? this.weight / 1000 + 'kg' : this.height + 'g') +
-        ', price=' + this.price+'$, legendary=' + this.legendary+', year='+this.year+'\n\t]';
+        ', price=' + this.price+'$, legendary=' + this.legendary+', year='+this.year+', damage='+this.damage+'\n\t]';
 };
 
 

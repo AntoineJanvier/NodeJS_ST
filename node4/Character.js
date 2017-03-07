@@ -13,6 +13,7 @@ let Character = function (name, weapon) {
 };
 
 Character.prototype.protect = function (degats) {
+    console.log('\n\t' + (degats * 55) / 100);
     this.health -= (degats * 55) / 100;
     this.health = Math.round(this.health);
     if(this.health < 0)
@@ -21,6 +22,14 @@ Character.prototype.protect = function (degats) {
 Character.prototype.attack = function (c) {
     if(Math.random() * 100 < this.hitChance)
         c.protect(Math.round((this.weapon.damage + ((this.weapon.damage * 13) / 100))));
+    else {
+        console.log('\n\t' + this.weapon.damage + ((this.weapon.damage * 13) / 100) + 'dégats');
+        this.health -= this.weapon.damage + ((this.weapon.damage * 13) / 100);
+        this.health = Math.round(this.health);
+        if(this.health < 0)
+            this.health = 0;
+    }
+
 };
 
 Character.prototype.toString = function () {
