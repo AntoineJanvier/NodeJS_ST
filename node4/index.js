@@ -29,9 +29,12 @@ for(let i = 0; i < nb_joueurs; i++) {
 console.log(players+'');
 
 let player_alive = nb_joueurs;
+let r = 0;
 while(player_alive > nb_joueurs / 2) {
-    let a = players[Math.round(Math.random()*nb_joueurs)];
-    let b = players[Math.round(Math.random()*nb_joueurs)];
+    r = Math.round(Math.random()*(nb_joueurs-1));
+    let a = players[r];
+    r = Math.round(Math.random()*(nb_joueurs-1));
+    let b = players[r];
     if(a != b) {
         if(a.health != 0 && b.health != 0) {
             a.attack(b);
@@ -41,6 +44,7 @@ while(player_alive > nb_joueurs / 2) {
                     console.log('MORT de : ' + a.name);
                 if(b.health == 0)
                     console.log('MORT de : ' + b.name);
+                player_alive--;
             }
         }
     }

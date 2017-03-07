@@ -7,7 +7,7 @@ let Weapon = require('./Weapon');
 
 let Character = function (name, weapon) {
     this.name = name;
-    this.health = Math.round(25000 + (Math.random() * 25000));
+    this.health = Math.round(1500 + (Math.random() * 5000));
     this.hitChance = Math.round((50 + (Math.random() * 70)) * 100) / 100;
     this.weapon = weapon || new Weapon();
 };
