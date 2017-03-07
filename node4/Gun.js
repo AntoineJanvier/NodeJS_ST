@@ -6,27 +6,36 @@
 
 let Weapon = require('./Weapon');
 
-let Gun = function(name, hei, wid, wei, price, bullets) {
+const Gun = function (config) {
     Weapon.apply(this,arguments);
-    this.bullets=bullets;
+    this.bullets=config.bullets;
 };
+
+// let Gun = function(name, hei, wid, wei, price, bullets) {
+//     Weapon.apply(this,arguments);
+//     this.bullets=bullets;
+// };
 
 Gun.prototype = new Weapon();
 Gun.prototype.constructor = Gun;
 
 Gun.prototype.bonus = function() {
-    return ((this.bullets * this.weight) / (this.weight % this.bullets));
+    if(this.bullets == 0) return 0;
+    let res = this.weight % this.bullets;
+    if(this.bullets == 0) return 0;
+    return (this.bullets * this.weight) / res;
 };
-Gun.prototype.damage = function(){
-    return (((this.weight) / (this.width*this.height)) + this.bonus());
+Gun.prototype.damage = function() {
+    let res = this.height * this.width;
+    if(res == 0) return this.bonus();
+    return this.weight / res + this.bonus();
 };
 Gun.prototype.duration = function() {
-    return ((this.price/this.weight)*this.damage());
+    if(this.weight <= 0) return 0;
+    return (this.price / this.weight) * this.damage();
 };
 Gun.prototype.toString = function () {
-    return '\n\tGun=[\n\t\tname"'+this.name+'", height='+this.height+
-        'm, width='+this.width+'m, weight='+(this.weight > 1000 ? this.weight / 1000 + 'kg' : this.height + 'g')+
-        ', price='+this.price+'$, bullets='+this.bullets+'\n\t]';
+    return 'Gun=[' + Weapon.prototype.toString.apply(this, arguments) + ', bullets=' + this.bullets + ']';
 };
 
 module.exports = Gun;
