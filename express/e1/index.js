@@ -44,9 +44,9 @@ app.all('*', function (req, res) {
     res.type('text');
     res.send('-> NO WAY!');
 });
-
-app.listen(1101, function () {
-    console.log('Server started on port 1101...');
+let port = 1101;
+app.listen(port, function () {
+    console.log('Server started on port ' + port + '+...');
 });
 
 /**
