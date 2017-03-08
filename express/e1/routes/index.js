@@ -6,4 +6,5 @@
 module.exports = function (app) {
     require('./cookie')(app);
     require('./example')(app);
+    require('./car')(app);
 };

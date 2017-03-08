@@ -46,7 +46,7 @@ app.all('*', function (req, res) {
 });
 let port = 1101;
 app.listen(port, function () {
-    console.log('Server started on port ' + port + '+...');
+    console.log('Server started on port ' + port + '...');
 });
 
 /**
