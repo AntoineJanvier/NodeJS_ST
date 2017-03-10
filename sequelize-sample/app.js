@@ -8,7 +8,8 @@ const bodyParser = require('body-parser');
 const index = require('./routes/index');
 const users = require('./routes/users');
 const students = require('./routes/students');
-const schools = require('./routes/school');
+const schools = require('./routes/schools');
+const projects = require('./routes/projects');
 
 const models = require('./models');
 models.sequelize.sync();
@@ -31,6 +32,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/students', students);
 app.use('/schools', schools);
+app.use('/projects', projects);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

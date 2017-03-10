@@ -4,7 +4,7 @@
 'use strict';
 
 module.exports = function(sequelize, DataTypes) {
-    return sequelize.define('School', {
+    let School = sequelize.define('School', {
         id: {
             type: DataTypes.BIGINT,
             primaryKey: true,
@@ -19,16 +19,17 @@ module.exports = function(sequelize, DataTypes) {
         freezeTableName: true,
         classMethods: {
             associate: function(models) {
-                // associations can be defined here
+
             }
         },
         instanceMethods: {
-            // responsify: function () {
-            //     let result = {};
-            //     result.id = this.id;
-            //     result.name = this.name;
-            //     return result;
-            // }
+            responsify: function () {
+                let result = {};
+                result.id = this.id;
+                result.name = this.name;
+                return result;
+            }
         }
     });
+    return School;
 };

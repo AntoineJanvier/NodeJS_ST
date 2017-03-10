@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-    var Student = sequelize.define('Student', {
+    let Student = sequelize.define('Student', {
         id: {
             type: DataTypes.BIGINT,
             primaryKey: true,
@@ -21,7 +21,10 @@ module.exports = function(sequelize, DataTypes) {
         freezeTableName: true,
         classMethods: {
             associate: function(models) {
-            // associations can be defined here
+                Student.belongsTo(models.School);
+                Student.belongsToMany(models.Project, {
+                    through: "StudentProject"
+                });
             }
         },
         instanceMethods: {
@@ -31,6 +34,13 @@ module.exports = function(sequelize, DataTypes) {
                 result.lastname = this.lastname;
                 result.firstname = this.firstname;
                 result.birthdate = this.birthdate;
+                if(this.School)
+                    result.school = this.School.responsify();
+                if(this.Projects) {
+                    for(let p of this.Projects)
+                        p = p.responsify()
+                    // result.project = this.Projects.responsify();
+                }
                 return result;
             }
         }
